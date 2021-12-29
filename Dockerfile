@@ -47,9 +47,6 @@ COPY docker/fpm-pool.conf /etc/php/8.0/fpm/pool.d/www.conf
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/entrypoint.sh /entrypoint.sh
 
-RUN chown -R www-data:www-data /var/www/html
-RUN chown -R www-data:www-data storage bootstrap/cache
-
 RUN chmod u+x /entrypoint.sh
 
 EXPOSE 8080
